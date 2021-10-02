@@ -1,5 +1,0 @@
-bottle	chai nước
-dog	gà
-go	đi
-translate	dịch
-transport	đổi chỗ
