@@ -8,6 +8,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import static com.example.dictionarymaster.DictionaryCommandLine.dictionaryAdvanced;
+
 public class HelloApplication extends Application {
     @Override
     public void start(Stage primaryStage) {
@@ -22,7 +24,11 @@ public class HelloApplication extends Application {
         }
     }
     public static void main(String[] args) {
-
+        try {
+            dictionaryAdvanced();
+        } catch (Exception e) {
+            System.out.println("1");
+        }
         launch();
 
     }

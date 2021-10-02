@@ -10,13 +10,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.control.Button?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarymaster.HelloController">
    <children>
       <MenuBar prefHeight="32.0" prefWidth="850.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+                  <MenuItem mnemonicParsing="false" text="New" />
+              <MenuItem mnemonicParsing="false" onAction="#closeWindow" text="Close" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
@@ -31,23 +32,18 @@
           </Menu>
         </menus>
       </MenuBar>
-      <AnchorPane prefHeight="178.0" prefWidth="218.0">
-         <children>
-            <ImageView fitHeight="144.0" fitWidth="256.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@img/kayn.png" />
-               </image></ImageView>
-            <TextField layoutY="147.0" prefHeight="31.0" prefWidth="192.0" />
-            <Button layoutX="192.0" layoutY="147.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="64.0" text="Search" />
-         </children>
-      </AnchorPane>
-      <ListView layoutY="201.0" prefHeight="299.0" prefWidth="256.0" />
-      <Text layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Result" textAlignment="CENTER" wrappingWidth="256.0" />
-      <ScrollBar layoutX="231.0" layoutY="201.0" orientation="VERTICAL" prefHeight="299.0" prefWidth="25.0" />
+      <TextField layoutY="85.0" prefHeight="31.0" prefWidth="183.0" />
+      <Button layoutX="183.0" layoutY="85.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="73.0" text="Search" />
+      <ListView layoutY="143.0" prefHeight="357.0" prefWidth="256.0" />
+      <Text layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Result" textAlignment="CENTER" wrappingWidth="256.0">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <ScrollBar layoutX="231.0" layoutY="143.0" orientation="VERTICAL" prefHeight="357.0" prefWidth="25.0" />
       <Label layoutX="256.0" layoutY="32.0" prefHeight="470.0" prefWidth="383.0" text="Meaning" textAlignment="CENTER" />
-      <AnchorPane layoutX="636.0" layoutY="30.0" prefHeight="470.0" prefWidth="214.0">
+      <AnchorPane layoutX="636.0" layoutY="73.0" prefHeight="429.0" prefWidth="214.0">
          <children>
-            <Button layoutX="65.0" layoutY="46.0" mnemonicParsing="false" text="Add">
+            <Button layoutX="117.0" layoutY="61.0" mnemonicParsing="false" text="Add">
                <graphic>
                   <ImageView fitHeight="21.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -56,7 +52,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="57.0" layoutY="90.0" mnemonicParsing="false" text="Delete">
+            <Button layoutX="14.0" layoutY="60.0" mnemonicParsing="false" text="Delete">
                <graphic>
                   <ImageView fitHeight="23.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -65,7 +61,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button layoutX="65.0" layoutY="135.0" mnemonicParsing="false" text="Edit">
+            <Button layoutX="70.0" layoutY="106.0" mnemonicParsing="false" text="Edit">
                <graphic>
                   <ImageView fitHeight="38.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -74,6 +70,12 @@
                   </ImageView>
                </graphic>
             </Button>
+            <TableView layoutY="180.0" prefHeight="247.0" prefWidth="214.0">
+              <columns>
+                <TableColumn fx:id="targetColumn" prefWidth="93.0" text="Target" />
+                <TableColumn fx:id="explainColumn" prefWidth="125.0" text="Explain" />
+              </columns>
+            </TableView>
          </children>
       </AnchorPane>
    </children>

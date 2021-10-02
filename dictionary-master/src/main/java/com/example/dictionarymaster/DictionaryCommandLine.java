@@ -14,20 +14,9 @@ public class DictionaryCommandLine extends DictionaryManagement {
         }
     }
 
-    public static void dictionaryBasic() {
-        DictionaryManagement.insertFromCommandline();
-        showAllWords();
-
-    }
 
     public static void dictionaryAdvanced() {
         DictionaryManagement.insertFromFile();
-
-        DictionaryManagement.dictionaryLookup();
-        DictionaryManagement.dictionaryEditing();
-        DictionaryManagement.dictionaryDelete();
-        DictionaryManagement.dictionaryExportToFile();
-        showAllWords();
     }
 
     public static void dictionarySearcher() {
