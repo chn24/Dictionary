@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar prefHeight="32.0" prefWidth="850.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane prefHeight="178.0" prefWidth="218.0">
+         <children>
+            <ImageView fitHeight="144.0" fitWidth="256.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/kayn.png" />
+               </image></ImageView>
+            <TextField layoutY="147.0" prefHeight="31.0" prefWidth="192.0" />
+            <Button layoutX="192.0" layoutY="147.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="64.0" text="Search" />
+         </children>
+      </AnchorPane>
+      <ListView layoutY="201.0" prefHeight="299.0" prefWidth="256.0" />
+      <Text layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Result" textAlignment="CENTER" wrappingWidth="256.0" />
+      <ScrollBar layoutX="231.0" layoutY="200.0" orientation="VERTICAL" prefHeight="299.0" prefWidth="25.0" />
+      <Label layoutX="256.0" layoutY="32.0" prefHeight="470.0" prefWidth="383.0" text="Meaning" textAlignment="CENTER" />
+      <AnchorPane layoutX="638.0" layoutY="32.0" prefHeight="470.0" prefWidth="214.0">
+         <children>
+            <Button layoutX="63.0" layoutY="118.0" mnemonicParsing="false" text="Add">
+               <graphic>
+                  <ImageView fitHeight="21.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/pngtree-vector-add-icon-png-image_992290.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="62.0" layoutY="202.0" mnemonicParsing="false" text="Delete">
+               <graphic>
+                  <ImageView fitHeight="23.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/pngtree-cancel-vector-icon-png-image_3723353.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button layoutX="64.0" layoutY="288.0" mnemonicParsing="false" text="Edit">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/kisspng-camera-icons-icon-interface-icon-pencil-edit-butto-5d3d604da91ac1.9087379215643034376927.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
