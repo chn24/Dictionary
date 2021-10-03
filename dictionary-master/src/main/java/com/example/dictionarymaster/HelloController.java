@@ -60,6 +60,7 @@ public class HelloController implements Initializable {
 
     public void search(ActionEvent e) {
         ObservableList<String> listWordSearch = FXCollections.observableArrayList();
+        listWordSearch.clear();
         String wordSearch = new String();
         wordSearch = wordText.getText();
         for (Map.Entry<String, String> getWord : dictionary.entrySet()){
