@@ -1,0 +1,15 @@
+bottle	chai nước
+dog	gà
+go	đi
+translate	dịch
+transport	đổi chỗ
+study	học
+error	lỗi
+student	học sinh
+mother	mẹ
+father	bố
+knife	dao
+water	nước
+listen	nghe
+hello	Xin chào
+bye	Tạm Biệt
