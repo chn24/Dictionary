@@ -41,10 +41,6 @@
       <TextField fx:id="wordText" layoutX="1.0" layoutY="83.0" prefHeight="31.0" prefWidth="183.0" promptText="Write your word" />
       <Button fx:id="searchButton" layoutX="184.0" layoutY="83.0" mnemonicParsing="false" onAction="#search" prefHeight="31.0" prefWidth="73.0" text="Search" />
       <ListView fx:id="listWordView" layoutY="143.0" prefHeight="357.0" prefWidth="256.0" />
-      <Text layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Result" textAlignment="CENTER" wrappingWidth="256.0">
-         <font>
-            <Font size="18.0" />
-         </font></Text>
       <ScrollBar layoutX="231.0" layoutY="143.0" orientation="VERTICAL" prefHeight="357.0" prefWidth="25.0" />
       <Label layoutX="256.0" layoutY="84.0" prefHeight="418.0" prefWidth="383.0" text="Meaning" textAlignment="CENTER" />
       <AnchorPane layoutX="636.0" layoutY="84.0" prefHeight="411.0" prefWidth="214.0">
@@ -67,7 +63,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <TableView fx:id="table" layoutY="111.0" prefHeight="305.0" prefWidth="214.0">
+            <TableView fx:id="table" layoutY="135.0" prefHeight="281.0" prefWidth="214.0">
               <columns>
                 <TableColumn fx:id="targetColumn" prefWidth="93.0" text="Target" />
                 <TableColumn fx:id="explainColumn" prefWidth="107.0" text="Explain" />
@@ -82,7 +78,17 @@
                   </ImageView>
                </graphic>
             </Button>
+            <ImageView fitHeight="29.0" fitWidth="214.0" layoutY="107.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/showdictionary.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
+      <ImageView fitHeight="30.0" fitWidth="290.0" layoutX="1.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/serachresult.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
