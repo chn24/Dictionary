@@ -1,6 +1,7 @@
 package com.example.dictionarymaster;
 
 import javafx.application.Platform;
+import javafx.beans.property.ReadOnlyObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -9,14 +10,11 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -43,23 +41,17 @@ public class HelloController implements Initializable {
     private FlowPane showSolve;
 
     @FXML
-    private VBox listNumber = new VBox();
-
-    @FXML
-    private VBox listTab1 = new VBox();
-
-    @FXML
     private VBox listTarget = new VBox();
 
     @FXML
-    private VBox listTab2 = new VBox();
+    private VBox listTab = new VBox();
 
     @FXML
     private VBox listExplain = new VBox();
 
     private ObservableList<Word> wordList;
 
-
+    ObservableList<String> listWordSearch = FXCollections.observableArrayList();
 
     public void closeWindow (ActionEvent event) {
         dictionaryExportToFile();
@@ -81,37 +73,20 @@ public class HelloController implements Initializable {
         table.setItems(wordList);
     }
 
+    @FXML
     public void search(ActionEvent e) {
-        int STT = 1;
-        ObservableList<String> listWordSearch = FXCollections.observableArrayList();
+        listWordSearch.clear();
         String wordSearch = new String();
         wordSearch = wordText.getText();
         showSolve.getChildren().clear();
-        listWordSearch.clear();
-
-        listNumber.getChildren().clear();
-        listNumber.getChildren().add(new Label("No"));
-        listNumber.setPadding(new Insets(20,20, 0,20));
-
-        listTab1.getChildren().clear();
-        listTab1.getChildren().add(new Label(" "));
-        listTab1.setPadding(new Insets(20,20, 0,20));
-
-        listTab2.getChildren().clear();
-        listTab2.getChildren().add(new Label(" "));
-        listTab2.setPadding(new Insets(20,20, 0,20));
-
         listTarget.getChildren().clear();
-        listTarget.getChildren().add(new Label("Target"));
-        listTarget.setPadding(new Insets(20,20, 0,20));
-
+        listTab.getChildren().clear();
         listExplain.getChildren().clear();
-        listExplain.getChildren().add(new Label("Explain"));
-        listExplain.setPadding(new Insets(20,20, 0,20));
 
         for (Map.Entry<String, String> getWord : dictionary.entrySet()) {
             int k = 0;
             String WordNS = getWord.getKey();
+            showSolve.getChildren().clear();
             for (int i = 0; i < wordSearch.length(); i++){
                 if(wordSearch.charAt(i) != WordNS.charAt(i)){
                     k =1;
@@ -120,15 +95,36 @@ public class HelloController implements Initializable {
             }
             if (k == 0) {
                 listWordSearch.add(getWord.getKey());
-                listNumber.getChildren().add(new Label(String.valueOf(STT)));
-                listTab1.getChildren().add(new Label("|"));
-                listTab2.getChildren().add(new Label("|"));
-                listTarget.getChildren().add(new Label(getWord.getKey()));
-                listExplain.getChildren().add(new Label(getWord.getValue()));
-                STT++;
             }
         }
         listWordView.getItems().setAll(listWordSearch);
-        showSolve.getChildren().addAll(listNumber, listTab1, listTarget, listTab2, listExplain);
     }
+
+    @FXML
+    public void wordClick (MouseEvent e) {
+        ReadOnlyObjectProperty<String> newWord = listWordView.getSelectionModel().selectedItemProperty();
+        String wordSelect = newWord.getValue();
+        String explainSelect = dictionary.get(wordSelect);
+        showSolve.getChildren().clear();
+
+        listTarget.getChildren().clear();
+        listTarget.getChildren().add(new Label("Target"));
+        listTarget.setPadding(new Insets(20,20, 0,20));
+        listTarget.getChildren().add(new Label(wordSelect));
+
+        listTab.getChildren().clear();
+        listTab.getChildren().add(new Label(" "));
+        listTab.setPadding(new Insets(20,20, 0,20));
+        listTab.getChildren().add(new Label("|"));
+
+        listExplain.getChildren().clear();
+        listExplain.getChildren().add(new Label("Explain"));
+        listExplain.setPadding(new Insets(20,20, 0,20));
+        listExplain.getChildren().add(new Label(explainSelect));
+
+        showSolve.getChildren().addAll(listTarget, listTab, listExplain);
+    }
+
+
+
 }
