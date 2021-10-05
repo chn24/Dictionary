@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
@@ -74,7 +75,7 @@ public class HelloController implements Initializable {
     }
 
     @FXML
-    public void search(ActionEvent e) {
+    public void search(KeyEvent key) {
         listWordSearch.clear();
         String wordSearch = new String();
         wordSearch = wordText.getText();
