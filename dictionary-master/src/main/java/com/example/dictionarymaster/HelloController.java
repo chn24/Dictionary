@@ -6,15 +6,21 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Map;
 import java.util.ResourceBundle;
@@ -125,7 +131,39 @@ public class HelloController implements Initializable {
 
         showSolve.getChildren().addAll(listTarget, listTab, listExplain);
     }
+//  Add Scene
+public void newWordScene (ActionEvent event) throws IOException {
+//        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(getClass().getResource("hello-view.fxml"));
+//        Parent studentViewParent = loader.load();
+//        Scene scene = new Scene(studentViewParent);
+//        stage.setScene(scene);
+    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    FXMLLoader loader = new FXMLLoader();
+    loader.setLocation(getClass().getResource("Add2.fxml"));
+    Parent AddView = loader.load();
+    Scene scene = new Scene(AddView);
+    stage.setScene(scene);
+}
+    //    Edit Scene
+    public void editWordScene (ActionEvent event) throws IOException {
 
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Edit.fxml"));
+        Parent AddView = loader.load();
+        Scene scene = new Scene(AddView);
+        stage.setScene(scene);
+    }
+    //    Delete Scene
+    public void deleteWordScene (ActionEvent event) throws IOException {
 
-
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Delete.fxml"));
+        Parent AddView = loader.load();
+        Scene scene = new Scene(AddView);
+        stage.setScene(scene);
+    }
 }

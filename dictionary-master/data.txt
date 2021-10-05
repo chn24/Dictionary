@@ -1,15 +1,16 @@
 bottle	chai nước
+bye	Tạm Biệt
+chair	bàn
 dog	gà
+error	lỗi
+father	bố
 go	đi
+hello	Xin chào
+knife	dao
+listen	nghe
+mother	mẹ
+student	học sinh
+study	học
 translate	dịch
 transport	đổi chỗ
-study	học
-error	lỗi
-student	học sinh
-mother	mẹ
-father	bố
-knife	dao
 water	nước
-listen	nghe
-hello	Xin chào
-bye	Tạm Biệt

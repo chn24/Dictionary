@@ -54,9 +54,9 @@
                   <Image url="@img/showdictionary.png" />
                </image>
             </ImageView>
-            <Button layoutY="29.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="Add" />
-            <Button layoutX="75.0" layoutY="29.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="Edit" />
-            <Button layoutX="149.0" layoutY="29.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="65.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="Delete" />
+            <Button layoutY="29.0" mnemonicParsing="false" onAction="#newWordScene" prefHeight="31.0" prefWidth="65.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="Add" />
+            <Button layoutX="75.0" layoutY="29.0" mnemonicParsing="false" onAction="#editWordScene" prefHeight="31.0" prefWidth="65.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="Edit" />
+            <Button layoutX="149.0" layoutY="29.0" mnemonicParsing="false" onAction="#deleteWordScene" prefHeight="31.0" prefWidth="65.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="Delete" />
          </children>
       </AnchorPane>
       <ImageView fitHeight="32.0" fitWidth="256.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
