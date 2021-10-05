@@ -10,25 +10,6 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarymaster.deleteWordController">
     <children>
-        <MenuBar prefHeight="32.0" prefWidth="850.0">
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
         <ImageView fitHeight="55.0" fitWidth="850.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@img/header.png" />
@@ -44,16 +25,30 @@
                 <Font size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="deleteWord" layoutX="305.0" layoutY="257.0" prefHeight="31.0" prefWidth="314.0" />
-        <Button layoutX="393.0" layoutY="357.0" mnemonicParsing="false" onAction="#deleteDone" text="Done">
+        <TextField fx:id="deleteWord" layoutX="305.0" layoutY="257.0" prefHeight="31.0" prefWidth="314.0" promptText="Your answer" />
+        <Button layoutX="377.0" layoutY="350.0" mnemonicParsing="false" onAction="#deleteDone" prefHeight="45.0" prefWidth="110.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="Done">
             <font>
                 <Font size="18.0" />
             </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="28.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/done.png" />
+               </image>
+            </ImageView>
+         </graphic>
         </Button>
-        <Button layoutX="14.0" layoutY="405.0" mnemonicParsing="false" onAction="#Back" text="Back">
+        <Button layoutX="14.0" layoutY="405.0" mnemonicParsing="false" onAction="#Back" prefHeight="44.0" prefWidth="110.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="Back">
             <font>
                 <Font size="20.0" />
             </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="31.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
         </Button>
     </children>
 </AnchorPane>

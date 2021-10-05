@@ -1,7 +1,7 @@
 bottle	chai nước
+brother	anh trai, em trai
 bye	Tạm Biệt
 chair	bàn
-dog	gà
 error	lỗi
 father	bố
 go	đi
@@ -9,6 +9,7 @@ hello	Xin chào
 knife	dao
 listen	nghe
 mother	mẹ
+run	chạy
 student	học sinh
 study	học
 translate	dịch

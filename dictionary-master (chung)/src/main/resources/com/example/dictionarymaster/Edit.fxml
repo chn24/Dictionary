@@ -10,25 +10,6 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.dictionarymaster.editWordController">
     <children>
-        <MenuBar prefHeight="32.0" prefWidth="850.0">
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
         <ImageView fitHeight="55.0" fitWidth="850.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
             <image>
                 <Image url="@img/header.png" />
@@ -48,17 +29,31 @@
                 <Font size="30.0" />
             </font>
         </Label>
-        <TextField fx:id="editWord" layoutX="332.0" layoutY="212.0" prefHeight="31.0" prefWidth="314.0" />
-        <TextField fx:id="editNewMean" layoutX="332.0" layoutY="293.0" prefHeight="31.0" prefWidth="314.0" />
-        <Button layoutX="401.0" layoutY="357.0" mnemonicParsing="false" onAction="#editDone" text="Done">
+        <TextField fx:id="editWord" layoutX="332.0" layoutY="212.0" prefHeight="31.0" prefWidth="314.0" promptText="Your answer" />
+        <TextField fx:id="editNewMean" layoutX="332.0" layoutY="293.0" prefHeight="31.0" prefWidth="314.0" promptText="Your answer" />
+        <Button layoutX="401.0" layoutY="353.0" mnemonicParsing="false" onAction="#editDone" prefHeight="44.0" prefWidth="107.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="Done">
             <font>
                 <Font size="18.0" />
             </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="27.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/done.png" />
+               </image>
+            </ImageView>
+         </graphic>
         </Button>
-        <Button layoutX="14.0" layoutY="405.0" mnemonicParsing="false" onAction="#Back" text="Back">
+        <Button layoutX="14.0" layoutY="405.0" mnemonicParsing="false" onAction="#Back" prefHeight="44.0" prefWidth="107.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="Back">
             <font>
                 <Font size="20.0" />
             </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="29.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
         </Button>
     </children>
 </AnchorPane>
