@@ -30,30 +30,43 @@ public class editWordController {
     public void editDone(ActionEvent event) {
         String wordEdit = editWord.getText();
         String newMean = editNewMean.getText();
-        if( dictionary.containsKey(wordEdit) ) {
-            dictionary.put(wordEdit, newMean);
-            try {
-                FileWriter fw = new FileWriter("data.txt");
-                BufferedWriter bw = new BufferedWriter(fw);
-                for (Map.Entry<String, String> getWord : dictionary.entrySet()) {
-                    String WordtoS = getWord.getKey() + "\t" + getWord.getValue();
-                    bw.write(WordtoS);
-                    bw.newLine();
-                }
-                bw.close();
-                fw.close();
-            } catch (Exception e) {
-            }
-        }
-        else {
+        String copyW = wordEdit + "1";
+        String copyNM = newMean + "1";
+        if (copyNM.equals("1") || copyW.equals("1") ){
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Error");
-            alert.setHeaderText("Word not found");
-            alert.setContentText("Choose another word");
+            alert.setHeaderText("New word or Mean is empty");
+            alert.setContentText("Try again");
 
             ButtonType buttonTypeYes = new ButtonType("Ok", ButtonBar.ButtonData.YES);
             alert.getButtonTypes().setAll(buttonTypeYes);
             Optional<ButtonType> result = alert.showAndWait();
+        }
+        if ( copyNM.equals("1") == false && copyW.equals("1") == false) {
+            if (dictionary.containsKey(wordEdit)) {
+                dictionary.put(wordEdit, newMean);
+                try {
+                    FileWriter fw = new FileWriter("data.txt");
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    for (Map.Entry<String, String> getWord : dictionary.entrySet()) {
+                        String WordtoS = getWord.getKey() + "\t" + getWord.getValue();
+                        bw.write(WordtoS);
+                        bw.newLine();
+                    }
+                    bw.close();
+                    fw.close();
+                } catch (Exception e) {
+                }
+            } else {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText("Word not found");
+                alert.setContentText("Choose another word");
+
+                ButtonType buttonTypeYes = new ButtonType("Ok", ButtonBar.ButtonData.YES);
+                alert.getButtonTypes().setAll(buttonTypeYes);
+                Optional<ButtonType> result = alert.showAndWait();
+            }
         }
         editWord.clear();
         editNewMean.clear();

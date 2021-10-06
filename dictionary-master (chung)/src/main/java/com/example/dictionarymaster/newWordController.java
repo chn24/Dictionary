@@ -32,29 +32,42 @@ public class newWordController {
     public void Add(ActionEvent event) {
         String newWord = addWord.getText();
         String newMean = addMean.getText();
-        if (dictionary.containsKey(newWord) ){
+        String copyNW = newWord + "1";
+        String copyNM = newMean + "1";
+        if (copyNM.equals("1") || copyNW.equals("1") ){
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Error");
-            alert.setHeaderText("Word is already in Dictionary");
-            alert.setContentText("Choose another word");
+            alert.setHeaderText("New word or Mean is empty");
+            alert.setContentText("Try again");
 
             ButtonType buttonTypeYes = new ButtonType("Ok", ButtonBar.ButtonData.YES);
             alert.getButtonTypes().setAll(buttonTypeYes);
             Optional<ButtonType> result = alert.showAndWait();
         }
-        else {
-            dictionary.put(newWord, newMean);
-            try {
-                FileWriter fw = new FileWriter("data.txt");
-                BufferedWriter bw = new BufferedWriter(fw);
-                for (Map.Entry<String, String> getWord : dictionary.entrySet()) {
-                    String WordtoS = getWord.getKey() + "\t" + getWord.getValue();
-                    bw.write(WordtoS);
-                    bw.newLine();
+        if ( copyNM.equals("1") == false && copyNW.equals("1") == false) {
+            if (dictionary.containsKey(newWord)) {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Error");
+                alert.setHeaderText("Word is already in Dictionary");
+                alert.setContentText("Choose another word");
+
+                ButtonType buttonTypeYes = new ButtonType("Ok", ButtonBar.ButtonData.YES);
+                alert.getButtonTypes().setAll(buttonTypeYes);
+                Optional<ButtonType> result = alert.showAndWait();
+            } else {
+                dictionary.put(newWord, newMean);
+                try {
+                    FileWriter fw = new FileWriter("data.txt");
+                    BufferedWriter bw = new BufferedWriter(fw);
+                    for (Map.Entry<String, String> getWord : dictionary.entrySet()) {
+                        String WordtoS = getWord.getKey() + "\t" + getWord.getValue();
+                        bw.write(WordtoS);
+                        bw.newLine();
+                    }
+                    bw.close();
+                    fw.close();
+                } catch (Exception e) {
                 }
-                bw.close();
-                fw.close();
-            } catch (Exception e) {
             }
         }
         addWord.clear();
