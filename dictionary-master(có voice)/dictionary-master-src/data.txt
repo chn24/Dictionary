@@ -1,0 +1,18 @@
+bottle	chai nước
+brother	anh trai, em trai
+bye	Tạm Biệt
+chair	bàn
+error	lỗi
+father	bố
+go	đi
+hello	Xin chào
+kn	bvj
+knife	dao
+listen	nghe
+mother	mẹ
+run	chạy
+student	học sinh
+study	học
+translate	dịch
+transport	đổi chỗ
+water	nước
