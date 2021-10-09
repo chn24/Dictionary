@@ -30,7 +30,7 @@ public class deleteWordController {
         if ( copyW.equals("1") ){
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Error");
-            alert.setHeaderText("New word or Mean is empty");
+            alert.setHeaderText("Word is empty");
             alert.setContentText("Try again");
 
             ButtonType buttonTypeYes = new ButtonType("Ok", ButtonBar.ButtonData.YES);

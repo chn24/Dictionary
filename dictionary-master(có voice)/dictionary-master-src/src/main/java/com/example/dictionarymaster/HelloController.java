@@ -140,8 +140,32 @@ public class HelloController implements Initializable {
         listExplain.getChildren().add(new Label(explainSelect));
 
         showSolve.getChildren().addAll(listTarget, listTab, listExplain);
+        wordText.clear();
     }
 
+    public void searchAPI(ActionEvent event) throws IOException {
+        wordSelect = wordText.getText();
+        wordText.clear();
+        String explainSelect = Translater.translate("en", "vi", wordSelect);
+        showSolve.getChildren().clear();
+
+        listTarget.getChildren().clear();
+        listTarget.getChildren().add(new Label("Target"));
+        listTarget.setPadding(new Insets(20,20, 0,20));
+        listTarget.getChildren().add(new Label(wordSelect));
+
+        listTab.getChildren().clear();
+        listTab.getChildren().add(new Label(" "));
+        listTab.setPadding(new Insets(20,20, 0,20));
+        listTab.getChildren().add(new Label("|"));
+
+        listExplain.getChildren().clear();
+        listExplain.getChildren().add(new Label("Explain"));
+        listExplain.setPadding(new Insets(20,20, 0,20));
+        listExplain.getChildren().add(new Label(explainSelect));
+
+        showSolve.getChildren().addAll(listTarget, listTab, listExplain);
+    }
 
     public void voiceButton(ActionEvent e) {
         try {

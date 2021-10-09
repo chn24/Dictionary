@@ -6,7 +6,6 @@ error	lỗi
 father	bố
 go	đi
 hello	Xin chào
-kn	bvj
 knife	dao
 listen	nghe
 mother	mẹ
