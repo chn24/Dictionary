@@ -153,38 +153,6 @@ public class HelloController implements Initializable {
         wordText.clear();
     }
 
-    public void searchAPI(ActionEvent event) throws IOException {
-        wordSelect = wordText.getText();
-        if (!historyList.contains(wordSelect)) {
-            historyList.add(wordSelect);
-            listWordHistory.add(wordSelect);
-            listHistoryView.getItems().clear();
-            listHistoryView.getItems().addAll(listWordHistory);
-
-        }
-        DictionaryManagement.historyExportToFile();
-        wordText.clear();
-        String explainSelect = Translater.translate("en", "vi", wordSelect);
-        showSolve.getChildren().clear();
-
-        listTarget.getChildren().clear();
-        listTarget.getChildren().add(new Label("Target"));
-        listTarget.setPadding(new Insets(20,20, 0,20));
-        listTarget.getChildren().add(new Label(wordSelect));
-
-        listTab.getChildren().clear();
-        listTab.getChildren().add(new Label(" "));
-        listTab.setPadding(new Insets(20,20, 0,20));
-        listTab.getChildren().add(new Label("|"));
-
-        listExplain.getChildren().clear();
-        listExplain.getChildren().add(new Label("Explain"));
-        listExplain.setPadding(new Insets(20,20, 0,20));
-        listExplain.getChildren().add(new Label(explainSelect));
-
-        showSolve.getChildren().addAll(listTarget, listTab, listExplain);
-    }
-
     public void voiceButton(ActionEvent e) {
         try {
             System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us" + ".cmu_us_kal.KevinVoiceDirectory");
@@ -238,5 +206,16 @@ public class HelloController implements Initializable {
         listHistoryView.getItems().clear();
         listWordHistory.clear();
         DictionaryManagement.historyExportToFile();
+    }
+
+//    Api Scene
+    public void apiScene (ActionEvent event) throws IOException {
+
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("Api.fxml"));
+        Parent AddView = loader.load();
+        Scene scene = new Scene(AddView);
+        stage.setScene(scene);
     }
 }
