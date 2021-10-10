@@ -63,9 +63,9 @@
                   <Image url="@img/history.png" />
                </image>
             </ImageView>
-            <Button fx:id="clearHistory" layoutX="172.0" layoutY="30.0" mnemonicParsing="false" onAction="#clearHistory" prefHeight="22.0" prefWidth="42.0" style="-fx-background-color: #f11a58" text="Clear" textFill="WHITE">
+            <Button fx:id="clearHistory" layoutX="166.0" layoutY="30.0" mnemonicParsing="false" onAction="#clearHistory" prefHeight="22.0" prefWidth="48.0" style="-fx-background-color: #f11a58" text="Clear" textFill="WHITE">
                <font>
-                  <Font size="11.0" />
+                  <Font size="12.0" />
                </font></Button>
          </children>
       </AnchorPane>
@@ -74,7 +74,7 @@
             <Image url="@img/serachresult.png" />
          </image>
       </ImageView>
-      <FlowPane fx:id="showSolve" layoutX="255.0" layoutY="78.0" prefHeight="389.0" prefWidth="379.0" />
+      <FlowPane fx:id="showSolve" layoutX="255.0" layoutY="136.0" prefHeight="331.0" prefWidth="379.0" />
       <ImageView disable="true" fitHeight="22.0" fitWidth="36.0" layoutX="218.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@img/search.png" />
@@ -88,6 +88,6 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="498.0" layoutY="468.0" mnemonicParsing="false" onAction="#apiScene" prefHeight="31.0" prefWidth="65.0" style="-fx-background-color: #00a2e8 ; -fx-text-fill: #fff; " text="API" />
+      <Button layoutX="256.0" layoutY="467.0" mnemonicParsing="false" onAction="#apiScene" prefHeight="31.0" prefWidth="121.0" style="-fx-background-color: #f11a58" text="With Google" textFill="WHITE" />
    </children>
 </AnchorPane>

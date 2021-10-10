@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -38,20 +39,36 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Button layoutX="377.0" layoutY="427.0" mnemonicParsing="false" onAction="#Search" text="Translate">
+      <Button layoutX="378.0" layoutY="425.0" mnemonicParsing="false" onAction="#Search" prefHeight="44.0" prefWidth="115.0" style="-fx-background-color: #00a2e8" text="Translate" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="600.0" layoutY="427.0" mnemonicParsing="false" onAction="#Clear" text="Clear">
+      <Button layoutX="603.0" layoutY="425.0" mnemonicParsing="false" onAction="#Clear" prefHeight="44.0" prefWidth="83.0" style="-fx-background-color: #f11a58" text="Clear" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Button>
-      <Button layoutX="14.0" layoutY="431.0" mnemonicParsing="false" onAction="#Back" text="Back">
+      <Button layoutX="29.0" layoutY="425.0" mnemonicParsing="false" onAction="#Back" prefHeight="0.0" prefWidth="95.0" style="-fx-background-color: #00a2e8" text="Back" textFill="WHITE">
          <font>
             <Font size="20.0" />
          </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="24.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/back.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button layoutX="704.0" layoutY="233.0" mnemonicParsing="false" onAction="#voiceButton" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: #00a2e8">
+         <graphic>
+            <ImageView disable="true" fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/voice.png" />
+               </image>
+            </ImageView>
+         </graphic>
       </Button>
    </children>
 </AnchorPane>
