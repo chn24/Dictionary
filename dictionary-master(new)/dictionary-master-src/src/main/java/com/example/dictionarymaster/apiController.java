@@ -14,10 +14,15 @@ import javafx.stage.Stage;
 import javax.speech.Central;
 import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Locale;
+import java.util.Map;
 
+import static com.example.dictionarymaster.Dictionary.dictionary;
 import static com.example.dictionarymaster.Dictionary.historyList;
+
 
 public class apiController {
 
@@ -33,6 +38,17 @@ public class apiController {
         wordSelect = apiWord.getText();
         String explainSelect = Translater.translate("en", "vi", wordSelect);
         apiMean.setText(explainSelect);
+        try {
+            FileWriter fw = new FileWriter("history.txt",true);
+            BufferedWriter bw = new BufferedWriter(fw);
+                bw.write(wordSelect);
+                bw.newLine();
+                historyList.add(wordSelect);
+
+            bw.close();
+            fw.close();
+        } catch (Exception e) {
+        }
     }
 
     public void Clear(ActionEvent event) {

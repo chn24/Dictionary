@@ -30,7 +30,7 @@
          <font>
             <Font size="20.0" />
          </font></TextArea>
-      <TextArea fx:id="apiMean" layoutX="299.0" layoutY="286.0" prefHeight="115.0" prefWidth="445.0" wrapText="true">
+      <TextArea fx:id="apiMean" editable="false" layoutX="299.0" layoutY="286.0" prefHeight="115.0" prefWidth="445.0" wrapText="true">
          <font>
             <Font size="20.0" />
          </font></TextArea>
