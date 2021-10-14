@@ -17,6 +17,7 @@ public class HelloApplication extends Application {
         try {
             Parent root = FXMLLoader.load(this.getClass().getResource("hello-view.fxml"));
             Scene scene = new Scene(root);
+            primaryStage.setTitle("Dictionary");
             //scene.getStylesheets().add(getClass().getResource("theme.css").toExternalForm());
             primaryStage.setScene(scene);
             primaryStage.show();

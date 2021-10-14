@@ -33,9 +33,11 @@ public class vtoeController {
 
     String wordSelect = new String();
 
+    String explainSelect = new String();
+
     public void Search(ActionEvent event) throws IOException {
         wordSelect = vnm.getText();
-        String explainSelect = Translatev.translate("vi", "en", wordSelect);
+        explainSelect = Translatev.translate("vi", "en", wordSelect);
         eng.setText(explainSelect);
 
     }
@@ -62,5 +64,20 @@ public class vtoeController {
         Parent studentViewParent = loader.load();
         Scene scene = new Scene(studentViewParent);
         stage.setScene(scene);
+    }
+
+    public void voiceButton(ActionEvent e) {
+        try {
+            System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us" + ".cmu_us_kal.KevinVoiceDirectory");
+            Central.registerEngineCentral("com.sun.speech.freetts" + ".jsapi.FreeTTSEngineCentral");
+            Synthesizer voice = Central.createSynthesizer(new SynthesizerModeDesc(Locale.US));
+            voice.allocate();
+            voice.resume();
+            voice.speakPlainText(explainSelect, null);
+            voice.waitEngineState(Synthesizer.QUEUE_EMPTY);
+
+        } catch (Exception even) {
+            System.out.println("Please check your voice");
+        }
     }
 }
