@@ -23,37 +23,26 @@ import java.util.Map;
 import static com.example.dictionarymaster.Dictionary.dictionary;
 import static com.example.dictionarymaster.Dictionary.historyList;
 
-
-public class apiController {
-
-    @FXML
-    private TextArea apiWord;
+public class vtoeController {
 
     @FXML
-    private TextArea apiMean;
+    private TextArea vnm;
+
+    @FXML
+    private TextArea eng;
 
     String wordSelect = new String();
 
     public void Search(ActionEvent event) throws IOException {
-        wordSelect = apiWord.getText();
-        String explainSelect = Translater.translate("en", "vi", wordSelect);
-        apiMean.setText(explainSelect);
-        try {
-            FileWriter fw = new FileWriter("history.txt",true);
-            BufferedWriter bw = new BufferedWriter(fw);
-                bw.write(wordSelect);
-                bw.newLine();
-                historyList.add(wordSelect);
+        wordSelect = vnm.getText();
+        String explainSelect = Translatev.translate("vi", "en", wordSelect);
+        eng.setText(explainSelect);
 
-            bw.close();
-            fw.close();
-        } catch (Exception e) {
-        }
     }
 
     public void Clear(ActionEvent event) {
-        apiWord.clear();
-        apiMean.clear();
+        vnm.clear();
+        eng.clear();
         wordSelect = "";
     }
 
@@ -66,25 +55,10 @@ public class apiController {
         stage.setScene(scene);
     }
 
-    public void voiceButton(ActionEvent e) {
-        try {
-            System.setProperty("freetts.voices", "com.sun.speech.freetts.en.us" + ".cmu_us_kal.KevinVoiceDirectory");
-            Central.registerEngineCentral("com.sun.speech.freetts" + ".jsapi.FreeTTSEngineCentral");
-            Synthesizer voice = Central.createSynthesizer(new SynthesizerModeDesc(Locale.US));
-            voice.allocate();
-            voice.resume();
-            voice.speakPlainText(wordSelect, null);
-            voice.waitEngineState(Synthesizer.QUEUE_EMPTY);
-
-        } catch (Exception even) {
-            System.out.println("Please check your voice");
-        }
-    }
-
     public void Swap(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("ViToE.fxml"));
+        loader.setLocation(getClass().getResource("Api.fxml"));
         Parent studentViewParent = loader.load();
         Scene scene = new Scene(studentViewParent);
         stage.setScene(scene);
