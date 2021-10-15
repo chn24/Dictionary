@@ -1,7 +1,99 @@
-time	thời gian
-year	năm
-people	con người
-way	con đường
+air	không khí
+area	khu vực
+art	nghệ thuật
+back	phía sau
+body	cơ thể
+book	cuốn sách
+business	kinh doanh
+car	xe hơi
+case	trường hợp
+change	thay đổi
+child	con cái
+city	thành phố
+community	cộng đồng
+company	công ty
+country	đất nước
 day	ngày
+door	cánh cửa
+education	giáo dục
+end	kết thúc
+eye	mắt
+face	gương mặt
+fact	sự thật
+family	gia đình
+father	cha
+force	lực lượng
+friend	người bạn
+game	trò chơi
+girl	cô gái
+government	chính phủ
+group	nhóm
+guy	chàng trai
+hand	bàn tay
+head	ầu
+health	sức khỏe
+history	lịch sử
+home	nhà
+hour	giờ 
+house	ngôi nhà
+idea	ý tưởng
+information	thông tin
+issue	vấn đề
+job	nghề nghiệp
+kid	trẻ con
+kind	loại
+law	luật pháp
+level	cấp bậc
+life	cuộc sống
+line	vạch kẻ
+lot	từng phần
 man	đàn ông
+member	thành viên
+minute	phút
+moment	hiện tại
+money	tiền bạc
+month	tháng
+morning	buổi sáng
+mother	mẹ
+name	tên gọi
+night	ban đêm
+number	con số
+office	văn phòng
+others	những cái khác
+parent	phụ huynh
+part	bộ phận
+party	bữa tiệc
+person	con người
+place	vị trí
+point	điểm
+power	năng lượng
+president	chủ tịch
+problem	vấn đề
+program	chương trình
+question	câu hỏi
+reason	lý do
+research	nghiên cứu
+result	kết quả
+right	quyền lợi
+room	căn phòng
+school	trường học
+service	dịch vụ
+side	khía cạnh
+state	trạng thái
+story	câu chuyện
+student	học sinh
+study	học tập
+system	hệ thống
+teacher	giáo viên
+team	nhóm, đội
 thing	sự vật
+time	thời gian
+war	chiến tranh
+water	nước 
+way	con đường
+week	tuần
+woman	phụ nữ
+word	từ
+work	công việc
+world	thế giới
+year	năm
