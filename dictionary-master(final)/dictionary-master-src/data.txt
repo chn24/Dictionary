@@ -1,0 +1,7 @@
+time	thời gian
+year	năm
+people	con người
+way	con đường
+day	ngày
+man	đàn ông
+thing	sự vật

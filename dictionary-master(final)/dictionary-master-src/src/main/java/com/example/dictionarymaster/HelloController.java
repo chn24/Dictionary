@@ -57,16 +57,9 @@ public class HelloController implements Initializable {
     private ListView<String> listHistoryView;
 
     @FXML
-    private FlowPane showSolve;
+    private TextArea showSolve;
 
-    @FXML
-    private VBox listTarget = new VBox();
 
-    @FXML
-    private VBox listTab = new VBox();
-
-    @FXML
-    private VBox listExplain = new VBox();
 
     private ObservableList<Word> wordList = FXCollections.observableArrayList();
 
@@ -105,15 +98,13 @@ public class HelloController implements Initializable {
         listWordSearch.clear();
         String wordSearch = new String();
         wordSearch = wordText.getText();
-        showSolve.getChildren().clear();
-        listTarget.getChildren().clear();
-        listTab.getChildren().clear();
-        listExplain.getChildren().clear();
+        showSolve.clear();
+
 
         for (Map.Entry<String, String> getWord : dictionary.entrySet()) {
             int k = 0;
             String WordNS = getWord.getKey();
-            showSolve.getChildren().clear();
+            showSolve.clear();
             for (int i = 0; i < wordSearch.length(); i++){
                 if(wordSearch.charAt(i) != WordNS.charAt(i)){
                     k =1;
@@ -132,25 +123,8 @@ public class HelloController implements Initializable {
         ReadOnlyObjectProperty<String> newWord = listWordView.getSelectionModel().selectedItemProperty();
         wordSelect = newWord.getValue();
         String explainSelect = dictionary.get(wordSelect);
-        showSolve.getChildren().clear();
+        showSolve.setText(wordSelect + "  :  " + explainSelect);
 
-        listTarget.getChildren().clear();
-        listTarget.getChildren().add(new Label("Target"));
-        listTarget.setPadding(new Insets(20,20, 0,20));
-        listTarget.getChildren().add(new Label(wordSelect));
-
-        listTab.getChildren().clear();
-        listTab.getChildren().add(new Label(" "));
-        listTab.setPadding(new Insets(20,20, 0,20));
-        listTab.getChildren().add(new Label("|"));
-
-        listExplain.getChildren().clear();
-        listExplain.getChildren().add(new Label("Explain"));
-        listExplain.setPadding(new Insets(20,20, 0,20));
-        listExplain.getChildren().add(new Label(explainSelect));
-
-        showSolve.getChildren().addAll(listTarget, listTab, listExplain);
-        wordText.clear();
     }
 
     public void voiceButton(ActionEvent e) {
