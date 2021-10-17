@@ -68,6 +68,14 @@ public class newWordController {
                     fw.close();
                 } catch (Exception e) {
                 }
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Message");
+                alert.setHeaderText("Add succesfully");
+                //alert.setContentText("Try again");
+
+                ButtonType buttonTypeYes = new ButtonType("Ok", ButtonBar.ButtonData.YES);
+                alert.getButtonTypes().setAll(buttonTypeYes);
+                Optional<ButtonType> result = alert.showAndWait();
             }
         }
         addWord.clear();

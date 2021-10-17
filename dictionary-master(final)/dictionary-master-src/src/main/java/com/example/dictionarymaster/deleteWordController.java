@@ -52,6 +52,14 @@ public class deleteWordController {
                     fw.close();
                 } catch (Exception e) {
                 }
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setTitle("Message");
+                alert.setHeaderText("Delete succesfully");
+                //alert.setContentText("Try again");
+
+                ButtonType buttonTypeYes = new ButtonType("Ok", ButtonBar.ButtonData.YES);
+                alert.getButtonTypes().setAll(buttonTypeYes);
+                Optional<ButtonType> result = alert.showAndWait();
             } else {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
                 alert.setTitle("Error");
